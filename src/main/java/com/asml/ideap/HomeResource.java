@@ -1,4 +1,5 @@
 package com.asml.ideap;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,7 +11,8 @@ public class HomeResource{
 
     }
     @GetMapping("/ideap")
-    public String indexP(){
+    public String indexP(Authentication authentication){
+        System.out.println(authentication.getAuthorities());
         return "Idea Page";
 
     }
